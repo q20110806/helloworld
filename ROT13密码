@@ -1,0 +1,38 @@
+/*下面我们来介绍风靡全球的凯撒密码Caesar cipher，又叫移位密码。
+
+移位密码也就是密码中的字母会按照指定的数量来做移位。
+
+一个常见的案例就是ROT13密码，字母会移位13个位置。由'A' ↔ 'N', 'B' ↔ 'O'，以此类推。
+
+写一个ROT13函数，实现输入加密字符串，输出解密字符串。
+
+所有的字母都是大写，不要转化任何非字母形式的字符(例如：空格，标点符号)，遇到这些特殊字符，跳过它们。
+
+当你完成不了挑战的时候，记得开大招'Read-Search-Ask'。
+
+这是一些对你有帮助的资源:
+
+String.charCodeAt()
+String.fromCharCode()
+*/
+function rot13(str) { // LBH QVQ VG!
+  // 请把你的代码写在这里
+  var newStr='';
+  //遍历字符串
+  for(var i = 0; i < str.length; i++){
+  //得到字符的ASCII码
+    var currentCode = str.charCodeAt(i);
+  //不对非大写字母的字符做处理
+    if(currentCode<65||currentCode>90){
+      newStr+=str[i];
+  //对ASCII码大于78的作减法，小于作加法
+    }else if(currentCode<78){
+      newStr+=String.fromCharCode(currentCode+13);
+    }else{
+      newStr+=String.fromCharCode(currentCode-13);
+    }
+  }
+  return newStr;
+}
+
+rot13("SERR PBQR PNZC");  // 你可以修改这一行来测试你的代码
