@@ -1,0 +1,17 @@
+function palindrome(str) {
+  // 先处理字符串，将非字母和非数字取掉，再转为小写
+   var newStr=str.toLowerCase().replace(/[^A-Za-z0-9]/g,'');
+   //测试下是否处理成功
+   console.log(newStr);
+   //检验，首对尾，第二对倒二以此类推进行比较是否相等
+  for(var i=0;i<=newStr.length/2;i++){
+    if(newStr[i]!==newStr[newStr.length-1-i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+
+palindrome("eye");
