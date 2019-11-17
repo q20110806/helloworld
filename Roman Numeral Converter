@@ -1,0 +1,18 @@
+//将给定的数字转换成罗马数字。
+function convert(num) {
+//将特殊数字记下来在一个数组里
+var nums = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+//对应的罗马数字数组
+var romans = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+var str='';
+//对特殊数组进行遍历，
+nums.forEach(function(value,index) {
+//当给定的数字大于当前的遍历数时，给定数字就减去他，然后str拼接上对应的罗马数字
+  while(num>=value) {
+    str+=romans[index];
+    num-=value;
+  }
+});
+return str;
+}
+convert(36);
