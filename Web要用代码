@@ -1,0 +1,2 @@
+// 双击禁止选定文字
+        window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
