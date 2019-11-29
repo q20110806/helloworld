@@ -77,3 +77,9 @@ gulp.task('copy', () => {
 
 // 构建任务
 gulp.task('default', ['htmlmin', 'cssmin', 'jsmin', 'copy']);
+
+
+//生成package.json文件
+在命令行里进入项目description（没有创建一个）里，然后输入npm.inint -y 快速生成json文件
+
+//项目传输可以不用传输node_modules文件夹，别人拿到项目可以命令行进到description文件夹下输入npm install.然后系统就会根据json文件下载依赖的模块
