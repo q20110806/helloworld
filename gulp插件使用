@@ -83,3 +83,6 @@ gulp.task('default', ['htmlmin', 'cssmin', 'jsmin', 'copy']);
 在命令行里进入项目description（没有创建一个）里，然后输入npm.inint -y 快速生成json文件
 
 //项目传输可以不用传输node_modules文件夹，别人拿到项目可以命令行进到description文件夹下输入npm install.然后系统就会根据json文件下载依赖的模块
+
+//如果需要将项目给服务器人员，则需要用命令行在description下输入npm install gulp -save-dev命令，这时json文件里就多了个devDependencies属性（存的是项目运行不要的模块）。
+那么服务器人员在命令行输入npm install --production，则不会下载DevDependencies里的模块。
