@@ -86,3 +86,9 @@ gulp.task('default', ['htmlmin', 'cssmin', 'jsmin', 'copy']);
 
 //如果需要将项目给服务器人员，则需要用命令行在description下输入npm install gulp -save-dev命令，这时json文件里就多了个devDependencies属性（存的是项目运行不要的模块）。
 那么服务器人员在命令行输入npm install --production，则不会下载DevDependencies里的模块。
+
+//package-lock.json文件的作用
+1. 锁定包的版本，确保再次下载时不会因为包版本不同而产生问题
+2.加快下载速度，因为该文件中已经记录了项目所依赖第三方包的树状结构和包的下载地址，重新安装时只需下载即可，不需要做额外的工作
+
+//package.json里的scripts是给命令起别名，给那些长的难记的命令起个短的好记的外号。
